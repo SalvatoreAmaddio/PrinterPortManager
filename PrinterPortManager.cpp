@@ -75,7 +75,7 @@
 //    return xcvresult;
 //}
 
-//uncooment the following lines to create a DLL
+//uncomment the following lines to create a DLL
 extern "C" {
     __declspec(dllexport) DWORD CreateDeletePort(int action, LPWSTR portName, HANDLE printerObject);
 }
