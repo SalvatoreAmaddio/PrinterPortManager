@@ -4,6 +4,7 @@
 #include<string.h>
 #include <string>
 
+//UNCOMMENT THE FOLLOWING LINES TO RUN THE CODE AS AN EXECUTABLE:
 //static DWORD CreateDeletePort(int action, LPWSTR portName, HANDLE printerObject);
 //
 //int main(int argc, char** argv)
