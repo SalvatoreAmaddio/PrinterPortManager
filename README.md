@@ -10,6 +10,8 @@ The 'PrinterPortManager.cpp' file comes with the code to either:
 - An Integer: this is the action to take. Give 0 to add a Port; Give 1 to remove the Port.  
 
 ## Using the DLL in C#:
+Upload the dll in your project, ensure it is in your bin folder. Then in your class add the following:
+
 ```csharp
 [DllImport("PrinterPortManager.dll", CharSet = CharSet.Unicode, SetLastError = true)]
 public static extern uint CreateDeletePort(int action, string portName);
