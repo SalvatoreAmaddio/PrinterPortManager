@@ -4,6 +4,7 @@
 #include<string.h>
 #include <string>
 
+#pragma region code for executable
 //UNCOMMENT THE FOLLOWING LINES TO BUILD AND RUN THE PROJECT AS AN EXECUTABLE:
 //static DWORD CreateDeletePort(int action, LPWSTR portName, HANDLE printerObject);
 //
@@ -74,7 +75,9 @@
 //
 //    return xcvresult;
 //}
+#pragma endregion
 
+#pragma region code for DLL
 //UNCOMMENT THE FOLLOWING LINES TO BUILD THE PROJECT AS A DLL:
 extern "C" {
     __declspec(dllexport) DWORD CreateDeletePort(int action, LPWSTR portName);
@@ -111,3 +114,4 @@ __declspec(dllexport) DWORD CreateDeletePort(int action, LPWSTR portName) {
     ClosePrinter(printerObject);
     return xcvresult;
 }
+#pragma endregion
