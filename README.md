@@ -15,5 +15,6 @@ Upload the dll in your project, ensure it is in your bin folder. Then in your cl
 ```csharp
 [DllImport("PrinterPortManager.dll", CharSet = CharSet.Unicode, SetLastError = true)]
 public static extern uint CreateDeletePort(int action, string portName);
+```
 
 Now you can call the function from the DLL, for example:
