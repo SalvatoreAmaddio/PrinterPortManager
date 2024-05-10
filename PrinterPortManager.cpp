@@ -79,39 +79,39 @@
 
 #pragma region code for DLL
 //UNCOMMENT THE FOLLOWING LINES TO BUILD THE PROJECT AS A DLL:
-extern "C" {
-    __declspec(dllexport) DWORD CreateDeletePort(int action, LPWSTR portName);
-}
-
-__declspec(dllexport) DWORD CreateDeletePort(int action, LPWSTR portName) {
-    HANDLE printerObject;
-    PRINTER_DEFAULTS PrinterDefaults; //A structure that contains default settings for a printer
-    memset(&PrinterDefaults, 0, sizeof(PrinterDefaults)); //Initialization of PRINTER_DEFAULTS
-
-    PrinterDefaults.pDatatype = NULL;
-    PrinterDefaults.pDevMode = NULL;
-    PrinterDefaults.DesiredAccess = SERVER_ACCESS_ADMINISTER;
-
-    //Open the printer
-    LPWSTR printer = const_cast<LPTSTR>(TEXT(",XcvMonitor Local Port"));
-
-    if (!OpenPrinter(printer, &printerObject, &PrinterDefaults)) 
-    {
-        return -1;
-    }
-
-    DWORD needed = 0;
-    DWORD xcvresult = 0;
-
-    if (action == 0) 
-    {
-        XcvData(printerObject, L"AddPort", (BYTE*)portName, (wcslen(portName) + 1) * sizeof(wchar_t), NULL, 0, &needed, &xcvresult);
-    }
-    else 
-    {
-        XcvData(printerObject, L"DeletePort", (BYTE*)portName, (wcslen(portName) + 1) * sizeof(wchar_t), NULL, 0, &needed, &xcvresult);
-    }
-    ClosePrinter(printerObject);
-    return xcvresult;
-}
+//extern "C" {
+//    __declspec(dllexport) DWORD CreateDeletePort(int action, LPWSTR portName);
+//}
+//
+//__declspec(dllexport) DWORD CreateDeletePort(int action, LPWSTR portName) {
+//    HANDLE printerObject;
+//    PRINTER_DEFAULTS PrinterDefaults; //A structure that contains default settings for a printer
+//    memset(&PrinterDefaults, 0, sizeof(PrinterDefaults)); //Initialization of PRINTER_DEFAULTS
+//
+//    PrinterDefaults.pDatatype = NULL;
+//    PrinterDefaults.pDevMode = NULL;
+//    PrinterDefaults.DesiredAccess = SERVER_ACCESS_ADMINISTER;
+//
+//    //Open the printer
+//    LPWSTR printer = const_cast<LPTSTR>(TEXT(",XcvMonitor Local Port"));
+//
+//    if (!OpenPrinter(printer, &printerObject, &PrinterDefaults)) 
+//    {
+//        return -1;
+//    }
+//
+//    DWORD needed = 0;
+//    DWORD xcvresult = 0;
+//
+//    if (action == 0) 
+//    {
+//        XcvData(printerObject, L"AddPort", (BYTE*)portName, (wcslen(portName) + 1) * sizeof(wchar_t), NULL, 0, &needed, &xcvresult);
+//    }
+//    else 
+//    {
+//        XcvData(printerObject, L"DeletePort", (BYTE*)portName, (wcslen(portName) + 1) * sizeof(wchar_t), NULL, 0, &needed, &xcvresult);
+//    }
+//    ClosePrinter(printerObject);
+//    return xcvresult;
+//}
 #pragma endregion
