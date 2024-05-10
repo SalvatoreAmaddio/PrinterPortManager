@@ -4,7 +4,7 @@
 #include<string.h>
 #include <string>
 
-//UNCOMMENT THE FOLLOWING LINES TO RUN THE CODE AS AN EXECUTABLE:
+//UNCOMMENT THE FOLLOWING LINES TO BUILD AND RUN THE PROJECT AS AN EXECUTABLE:
 //static DWORD CreateDeletePort(int action, LPWSTR portName, HANDLE printerObject);
 //
 //int main(int argc, char** argv)
@@ -75,7 +75,7 @@
 //    return xcvresult;
 //}
 
-//uncomment the following lines to create a DLL
+//UNCOMMENT THE FOLLOWING LINES TO BUILD THE PROJECT AS A DLL:
 extern "C" {
     __declspec(dllexport) DWORD CreateDeletePort(int action, LPWSTR portName);
 }
