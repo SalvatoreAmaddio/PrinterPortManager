@@ -1,3 +1,3 @@
 # PrinterPortManager
 
-This is a C++ library
+This is a small C++ project which can add and remove Printer's Ports.
