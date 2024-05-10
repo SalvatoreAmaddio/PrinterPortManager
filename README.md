@@ -1,7 +1,9 @@
 # PrinterPortManager
 
 This is a small C++ project in the context of Windows programming. It adds or removes Printer's Ports.
-The 'PrinterPortManager.cpp' file comes with the code produce either a executable or a DLL. 
+The 'PrinterPortManager.cpp' file comes with the code to either:
+- Build and run the project as an executable.
+- Build the project as DLL.
 
 ## Arguments:
 - A String: this is the Port's Name to add or remove. 
