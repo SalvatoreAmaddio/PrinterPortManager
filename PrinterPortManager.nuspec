@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>1</id>
+    <version>1.0.0</version>
+    <authors>Salvatore Amaddio</authors>
+    <owners>Salvatore Amaddio</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This is a small C++ project in the context of Windows programming. It adds or removes Printer's Ports.</description>
+    <releaseNotes>Initial release.</releaseNotes>
+  </metadata>
+  <files>
+    <file src="PrinterPortManager.dll" target="lib\native" />
+  </files>
+</package>
