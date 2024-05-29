@@ -18,10 +18,10 @@
 //
 //    size_t size = strlen(argv[1]) + 1; //determining the size of the second command-line Argument:
 //    wchar_t* _portName = new wchar_t[size]; //allocate Memory for a Wide Character String:
-//    
-//    //convert Multibyte string to wide sharacter String:
+//       
 //    size_t outSize;
 //
+//    //use mbstowcs_s (i.e. MultiByte String to Wide Character String, Secure) to convert Multibyte string to wide sharacter String:
 //    if (mbstowcs_s(&outSize, _portName, size, argv[1], size - 1) != 0) 
 //    {
 //        delete[] _portName; //free memory allocated for _portName.
